@@ -1,11 +1,13 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Carousel from "../components/Carousel";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function MainPage() {
   return (
-    <div>
-      <h1>Main Page</h1>
-      <Navbar />
+    <div className="body-container">
+      <Carousel />
+      <Contact />
     </div>
   );
 }

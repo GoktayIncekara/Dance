@@ -1,0 +1,398 @@
+.body-container {
+  margin: 1rem 2rem 0 2rem;
+}
+
+.nav {
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 2rem 0 2rem;
+}
+
+#home {
+    padding: 0;
+    float: left;
+    text-decoration: none;
+}
+
+.logo-text {
+  color: #181823;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Tourney', cursive;
+  transition-property: color font-size;
+  transition-duration: 0.4s;
+}
+
+.logo-text:hover {
+  color: #537FE7;
+  font-size: 3.3rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 7rem;
+    padding-right: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav .nav-link {
+    float: left;
+    color: #181823;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    transition-property: color, border-radius, background-color, font-size;
+    transition-duration: 0.4s;
+}
+
+.nav .nav-link:hover {
+    background-color: #537FE7;
+    color: white;
+    border-radius: 50px;
+    font-size: 1.5rem;
+}
+
+.seperator {
+  font-weight: lighter;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 24px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 196px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+hr {
+  margin-top: 0;
+}
+
+.car-img {
+  max-width: 150rem;
+  max-height: 40rem;
+}
+
+.contact-section {
+  margin-top: 1rem;
+  height: 40vh;
+  background-color: #181823;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact-container {
+  width: 50%;
+  height: 40px;
+  background-color: #537FE7;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-title {
+  font-size: 70px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.contact-desc {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.contact-input {
+  border: none;
+  flex: 8;
+  text-decoration: none;
+  text-align: center;
+  color: #E9F8F9;
+  font-size: 22px;
+  font-weight: 400;
+  padding-top: 3px;
+}
+
+.form-container {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+input {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+form {
+  background-color: #181823;
+  padding: 60px;
+  border-radius: 10px;
+  min-width: 40vw;
+  min-height: 30vh;
+}
+
+.form-heading {
+  color: white;
+}
+
+.form-button {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color:#537FE7;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  transition: 0.3s linear all;
+}
+
+.register-button-disabled {
+  background-color: black;
+  border: 1px solid white;
+  opacity: 0.3;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  font-size: 20px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+input:invalid[focused="true"] {
+  border: 2px solid red;
+}
+
+input:invalid[focused="true"]  ~ .error {
+  display: block;
+}
+
+.register-select {
+  width: 100%;
+  min-width: 15ch;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.footer {
+  background-color: #537FE7 ;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.general-infos, .contact-infos {
+  margin: 1rem;
+}
+
+.contact-infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-seperator {
+  border-right: 1px solid rgb(255, 255, 255);
+}
+
+.general-infos h3 {
+  color: white;
+  font-weight: 300;
+  font-size: 4rem;
+  font-family: 'Tourney', cursive;
+}
+
+.general-infos h4 {
+  color: white;
+  font-weight: 400;
+}
+
+.footer-icon {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .body-container {
+    margin: 1rem 1rem;
+  }
+  .nav {
+    margin: 1rem 1rem 0 1rem;
+    align-items: center;
+  }
+  .logo-text {
+     display: none;
+  }
+  .logo {
+    height: 4rem;
+    margin-bottom: 0.2rem;
+  }
+  .nav-links {
+    align-self: center;
+  }
+  .nav .nav-link {
+    padding: 14px 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .nav .nav-link:hover {
+    border-radius: 20px;
+  }
+  .nav-links {
+    order: 1;
+  }
+  .seperator {
+    font-weight: 300;
+  }
+  .button-64 {
+    min-width: 110px;
+    height: 35px;
+    font-size: 20px;
+  }
+  .button-64 span {
+    padding: 5px 24px;
+    font-size: 1rem;
+  }
+  hr {
+    margin-top: 0.5rem;
+  }
+  .car-img {
+    max-width: 100rem;
+    max-height: 15rem;
+  }
+  .contact-section {
+    height: 20vh;
+  }
+  .contact-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .contact-desc {
+    font-size: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .contact-container {
+    height: 20px;
+  }
+  .contact-input {
+    font-size: 10px;
+  }
+
+  .footer {
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .general-infos, .contact-infos {
+    margin: 0.3rem;
+  }
+  
+  .general-infos h3 {
+    font-weight: 300;
+    font-size: 2rem;
+    font-family: 'Tourney', cursive;
+  }
+
+  .general-infos h4 {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .general-infos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  .contact-infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-icon {
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav .nav-link {
+    padding: 14px 10px;
+    font-size: 0.65rem;
+    font-weight: bold;
+  }
+}

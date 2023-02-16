@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -25,6 +26,22 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(jpg|png|jpeg)$/,
+        use: ["file-loader"],
+      },
+
+      {
+        test: /\.(html)$/,
+        use: ["html-loader"],
+      },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
 };
