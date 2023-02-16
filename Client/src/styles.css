@@ -249,6 +249,7 @@ input:invalid[focused="true"]  ~ .error {
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
+  margin-top: 4rem;
 }
 
 .general-infos, .contact-infos {
@@ -384,15 +385,18 @@ input:invalid[focused="true"]  ~ .error {
     justify-content: center;
   }
 
+  .footer {
+    margin-top: 2rem;
+  }
+
   .footer-icon {
     height: 3rem;
   }
+
 }
 
 @media screen and (max-width: 400px) {
   .nav .nav-link {
-    padding: 14px 10px;
     font-size: 0.65rem;
-    font-weight: bold;
   }
 }

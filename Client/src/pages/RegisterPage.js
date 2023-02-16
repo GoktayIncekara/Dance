@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Footer from "../components/Footer";
 import FormInput from "../components/FormInput";
+import axios from "axios";
 
 function RegisterPage() {
+  const API = axios.create({ baseURL: "http://localhost:5000" });
   const [role, setRole] = useState(null);
   const options = ["Öğrenci", "Dans okulu", "Organizator (Yakında...)"];
 
@@ -29,8 +30,10 @@ function RegisterPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const response = await API.post("/user/signup", { ...values, role });
+    localStorage.setItem("token", response.data.token);
   };
 
   return (
