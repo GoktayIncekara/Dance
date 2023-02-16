@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const API = axios.create({ baseURL: "http://localhost:5000" });
+  const navigate = useNavigate();
+
+  const options = ["Öğrenci", "Dans okulu", "Organizator (Yakında...)"];
   const [values, setValues] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
+  const [role, setRole] = useState(null);
 
   const onChange = (e) => {
     setValues((prevValues) => ({
@@ -15,8 +22,16 @@ function LoginPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const onRoleChangeHandler = (e) => {
+    setRole(+e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("eee");
+    const response = await API.post("/user/signin", { ...values, role });
+    localStorage.setItem("user", JSON.stringify(response.data));
+    navigate("/");
   };
 
   return (
@@ -24,6 +39,16 @@ function LoginPage() {
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <h1 className="form-heading">Giriş Yap</h1>
+          <select className="register-select" onChange={onRoleChangeHandler}>
+            <option disabled={role !== null}>Seçiniz</option>
+            {options.map((option, index) => {
+              return (
+                <option key={index} value={index} disabled={index === 2}>
+                  {option}
+                </option>
+              );
+            })}
+          </select>
           <FormInput
             name="email"
             type="email"

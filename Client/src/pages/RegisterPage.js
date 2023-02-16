@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
   const API = axios.create({ baseURL: "http://localhost:5000" });
   const [role, setRole] = useState(null);
   const options = ["Öğrenci", "Dans okulu", "Organizator (Yakında...)"];
+  const navigate = useNavigate();
 
   const onRoleChangeHandler = (e) => {
     setRole(+e.target.value);
@@ -33,7 +35,8 @@ function RegisterPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await API.post("/user/signup", { ...values, role });
-    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("user", JSON.stringify(response.data));
+    navigate("/");
   };
 
   return (
@@ -117,7 +120,7 @@ function RegisterPage() {
             value={values["phone"]}
             onChange={onChange}
             errorMessage="Lütfen şehri girin."
-            pattern="^[A-Za-z]{2,20}$"
+            pattern="^[A-Za-z-İ]{2,20}$"
             required
             disabled={role === null ? true : false}
           />

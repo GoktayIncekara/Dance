@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../images/logo.jpg";
 import { useNavigate } from "react-router-dom";
+import decode from "jwt-decode";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
+    setUser(null);
+  };
+
+  useEffect(() => {
+    const token = user?.token;
+    console.log(user);
+    if (token) {
+      const decodedToken = decode(token);
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout();
+      }
+    }
+  }, [location, user]);
+
   return (
     <div>
       <div className="nav">
@@ -29,14 +51,25 @@ function Navbar() {
             Dans Festivalleri
           </Link>
         </div>
-        <div className="nav-buttons">
-          <button onClick={() => navigate("./login")} className="button-64">
-            <span className="text">Giriş Yap</span>
-          </button>
-          <button onClick={() => navigate("./register")} className="button-64">
-            <span className="text">Üye Ol!</span>
-          </button>
-        </div>
+        {!user ? (
+          <div className="nav-buttons">
+            <button onClick={() => navigate("./login")} className="button-64">
+              <span className="text">Giriş Yap</span>
+            </button>
+            <button
+              onClick={() => navigate("./register")}
+              className="button-64"
+            >
+              <span className="text">Üye Ol!</span>
+            </button>
+          </div>
+        ) : (
+          <div className="nav-buttons">
+            <button onClick={logout} className="button-64">
+              <span className="text">Çıkış Yap</span>
+            </button>
+          </div>
+        )}
       </div>
       <hr />
     </div>
