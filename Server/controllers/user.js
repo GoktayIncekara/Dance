@@ -4,36 +4,70 @@ import jwt from "jsonwebtoken";
 import StudentModal from "../models/student.js";
 import SchoolModal from "../models/school.js";
 
-/* export const signin = async (req, res) => {
-  const { email, password } = req.body;
+export const signin = async (req, res) => {
+  const { email, password, role } = req.body;
+  if (role === 0) {
+    try {
+      const oldStudent = await StudentModal.findOne({ email });
 
-  try {
-    const oldUser = await UserModal.findOne({ email });
+      if (!oldStudent)
+        return res.status(404).json({ message: "Student doesn't exist" });
 
-    if (!oldUser)
-      return res.status(404).json({ message: "User doesn't exist" });
+      const isPasswordCorrect = await bcrypt.compare(
+        password,
+        oldStudent.password
+      );
 
-    const isPasswordCorrect = await bcrypt.compare(password, oldUser.password);
+      if (!isPasswordCorrect)
+        return res.status(400).json({ message: "Invalid credentials" });
 
-    if (!isPasswordCorrect)
-      return res.status(400).json({ message: "Invalid credentials" });
+      const token = jwt.sign(
+        { email: oldStudent.email, id: oldStudent._id },
+        process.env.secret,
+        {
+          expiresIn: "1h",
+        }
+      );
 
-    const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
-      expiresIn: "1h",
-    });
+      res.status(200).json({ userObject: oldStudent, token });
+    } catch (err) {
+      res.status(500).json({ message: "Something went wrong" });
+    }
+  } else if (role === 1) {
+    try {
+      const oldSchool = await SchoolModal.findOne({ email });
 
-    res.status(200).json({ userObject: oldUser, token });
-  } catch (err) {
-    res.status(500).json({ message: "Something went wrong" });
+      if (!oldSchool)
+        return res.status(404).json({ message: "School doesn't exist" });
+
+      const isPasswordCorrect = await bcrypt.compare(
+        password,
+        oldSchool.password
+      );
+
+      if (!isPasswordCorrect)
+        return res.status(400).json({ message: "Invalid credentials" });
+
+      const token = jwt.sign(
+        { email: oldSchool.email, id: oldSchool._id },
+        process.env.secret,
+        {
+          expiresIn: "1h",
+        }
+      );
+
+      res.status(200).json({ userObject: oldSchool, token });
+    } catch (err) {
+      res.status(500).json({ message: "Something went wrong" });
+    }
   }
-}; */
+};
 
 export const signup = async (req, res) => {
   if (req.body.role === 0) {
     const { fullname, email, city, phone, password, birthday } = req.body;
     try {
       const oldStudent = await StudentModal.findOne({ email });
-      console.log(oldStudent);
       if (oldStudent)
         return res.status(400).json({ message: "Student already exists" });
 
