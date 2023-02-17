@@ -28,7 +28,6 @@ function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("eee");
     const response = await API.post("/user/signin", { ...values, role });
     localStorage.setItem("user", JSON.stringify(response.data));
     navigate("/");

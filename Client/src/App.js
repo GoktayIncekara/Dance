@@ -5,10 +5,11 @@ import MainPage from "./pages/MainPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import Footer from "./components/Footer";
+import { AuthProvider } from "./context/auth-context";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -16,7 +17,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
-    </>
+    </AuthProvider>
   );
 }
 

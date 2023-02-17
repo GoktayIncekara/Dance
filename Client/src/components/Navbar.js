@@ -1,31 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../images/logo.jpg";
 import { useNavigate } from "react-router-dom";
 import decode from "jwt-decode";
 import { useLocation } from "react-router-dom";
+import { AuthContext } from "../context/auth-context";
+import { IoMdExit } from "react-icons/io";
 
 function Navbar() {
+  const ctx = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
   const logout = () => {
     localStorage.clear();
+    ctx.setUser(null);
     navigate("/");
-    setUser(null);
   };
 
   useEffect(() => {
-    const token = user?.token;
-    console.log(user);
+    const token = ctx.user?.token;
+    console.log("Token: ", token);
+    console.log("ctx.user: ", ctx.user);
+    console.log("Location: ", location);
     if (token) {
       const decodedToken = decode(token);
       if (decodedToken.exp * 1000 < new Date().getTime()) {
         logout();
       }
     }
-  }, [location, user]);
+  }, [location, ctx]);
 
   return (
     <div>
@@ -51,7 +55,7 @@ function Navbar() {
             Dans Festivalleri
           </Link>
         </div>
-        {!user ? (
+        {!ctx.user ? (
           <div className="nav-buttons">
             <button onClick={() => navigate("./login")} className="button-64">
               <span className="text">Giriş Yap</span>
@@ -66,7 +70,9 @@ function Navbar() {
         ) : (
           <div className="nav-buttons">
             <button onClick={logout} className="button-64">
-              <span className="text">Çıkış Yap</span>
+              <span className="button-logout-text">
+                <IoMdExit /> {ctx.user?.userObject?.fullname}
+              </span>
             </button>
           </div>
         )}
