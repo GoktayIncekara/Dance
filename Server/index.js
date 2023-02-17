@@ -3,6 +3,7 @@ import mongoose, { mongo } from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/users.js";
+import schoolRoutes from "./routes/schools.js";
 
 const app = express();
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/user", userRoutes);
+app.use("/schools", schoolRoutes);
 
 const port = process.env.PORT;
 const PORT = port || 5000;
