@@ -1,0 +1,11 @@
+.car_img {
+    max-width: 150rem;
+    max-height: 40rem;
+}
+
+@media screen and (max-width: 450px) {
+    .car_img {
+      max-width: 100rem;
+      max-height: 15rem;
+    }
+  }

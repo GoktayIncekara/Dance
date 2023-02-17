@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../images/logo.jpg";
+import Logo from "../../images/logo.jpg";
 import { useNavigate } from "react-router-dom";
 import decode from "jwt-decode";
 import { useLocation } from "react-router-dom";
-import { AuthContext } from "../context/auth-context";
+import { AuthContext } from "../../context/auth-context";
 import { IoMdExit } from "react-icons/io";
+import styles from "./navbar.module.css";
 
 function Navbar() {
   const ctx = useContext(AuthContext);
@@ -20,9 +21,6 @@ function Navbar() {
 
   useEffect(() => {
     const token = ctx.user?.token;
-    console.log("Token: ", token);
-    console.log("ctx.user: ", ctx.user);
-    console.log("Location: ", location);
     if (token) {
       const decodedToken = decode(token);
       if (decodedToken.exp * 1000 < new Date().getTime()) {
@@ -33,51 +31,54 @@ function Navbar() {
 
   return (
     <div>
-      <div className="nav">
+      <div className={styles.nav}>
         <div>
-          <Link id="home" to="/">
-            <div className="logo-section">
-              <img src={Logo} className="logo" alt="Logo" />
-              <h2 className="logo-text"> NonStop.</h2>
+          <Link id={styles.home} to="/">
+            <div className={styles.logo_section}>
+              <img src={Logo} className={styles.logo} alt="Logo" />
+              <h2 className={styles.logo_text}> NonStop.</h2>
             </div>
           </Link>
         </div>
-        <div className="nav-links">
-          <Link className="nav-link" to="/okullar">
+        <div className={styles.nav_links}>
+          <Link className={styles.nav_link} to="/okullar">
             Dans Okulları
           </Link>
-          <h1 className="seperator">|</h1>
-          <Link className="nav-link" to="/geceler">
+          <h1 className={styles.nav_seperator}>|</h1>
+          <Link className={styles.nav_link} to="/geceler">
             Dans Geceleri
           </Link>
-          <h1 className="seperator">|</h1>
-          <Link className="nav-link" to="/festivaller">
+          <h1 className={styles.nav_seperator}>|</h1>
+          <Link className={styles.nav_link} to="/festivaller">
             Dans Festivalleri
           </Link>
         </div>
         {!ctx.user ? (
-          <div className="nav-buttons">
-            <button onClick={() => navigate("./login")} className="button-64">
-              <span className="text">Giriş Yap</span>
+          <div className={styles.nav_buttons}>
+            <button
+              onClick={() => navigate("./login")}
+              className={styles.button_64}
+            >
+              <span>Giriş Yap</span>
             </button>
             <button
               onClick={() => navigate("./register")}
-              className="button-64"
+              className={styles.button_64}
             >
-              <span className="text">Üye Ol!</span>
+              <span>Üye Ol!</span>
             </button>
           </div>
         ) : (
-          <div className="nav-buttons">
-            <button onClick={logout} className="button-64">
-              <span className="button-logout-text">
+          <div>
+            <button onClick={logout} className={styles.button_64}>
+              <span className={styles.button_logout_text}>
                 <IoMdExit /> {ctx.user?.userObject?.fullname}
               </span>
             </button>
           </div>
         )}
       </div>
-      <hr />
+      <hr className={styles.nav_hr} />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./formInput.module.css";
 
 function FormInput({
   placeholder,
@@ -15,7 +16,7 @@ function FormInput({
     setFocused(true);
   };
   return (
-    <div className="formInput">
+    <div className={styles.formInput}>
       <input
         onChange={onChange}
         type={type}
@@ -28,7 +29,7 @@ function FormInput({
         focused={focused.toString()}
         disabled={disabled}
       ></input>
-      <span className="error">{errorMessage}</span>
+      <span className={styles.error}>{errorMessage}</span>
     </div>
   );
 }

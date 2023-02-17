@@ -1,0 +1,63 @@
+.contact_section {
+    margin-top: 1rem;
+    height: 40vh;
+    background-color: #181823;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact_title {
+    font-size: 70px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contact_desc {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.mail_container {
+    width: 50%;
+    height: 40px;
+    background-color: #537FE7;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_input {
+    border: none;
+    flex: 8;
+    text-decoration: none;
+    text-align: center;
+    color: #E9F8F9;
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+@media screen and (max-width: 450px) {
+    .contact_section {
+      height: 20vh;
+    }
+    .contact_title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .contact_desc {
+      font-size: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .mail_container {
+      height: 20px;
+    }
+    .contact_input {
+      font-size: 10px;
+    }
+}
+  

@@ -1,0 +1,86 @@
+.footer {
+    background-color: #537FE7 ;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.general_infos {
+    margin-left: 2rem;
+}
+
+.general_infos h3 {
+    color: white;
+    font-weight: 300;
+    font-size: 4rem;
+    font-family: 'Tourney', cursive;
+}
+  
+.general_infos h4 {
+    color: white;
+    font-weight: 400;
+}
+
+.general_infos, .contact_infos {
+    margin: 1rem;
+}
+
+.footer_seperator {
+    border-right: 1px solid rgb(255, 255, 255);
+}
+
+.contact_infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+.footer_icon {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .footer {
+      min-height: 10vh;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+
+    .general-infos {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+    }
+
+    .general-infos h3 {
+        font-weight: 300;
+        font-size: 2rem;
+        font-family: 'Tourney', cursive;
+    }
+    
+    .general-infos h4 {
+        font-weight: 300;
+        font-size: 0.6rem;
+    }
+
+    .general-infos, .contact-infos {
+        margin: 0.3rem;
+    }
+
+    .contact-infos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .footer_icon {
+      height: 3rem;
+    }
+    
+}

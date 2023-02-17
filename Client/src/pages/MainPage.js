@@ -1,7 +1,6 @@
 import React from "react";
-import Carousel from "../components/Carousel";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Carousel from "../components/Carousel/Carousel";
+import Contact from "../components/Contact/Contact";
 
 function MainPage() {
   return (

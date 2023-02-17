@@ -1,0 +1,11 @@
+.formInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    font-size: 20px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
