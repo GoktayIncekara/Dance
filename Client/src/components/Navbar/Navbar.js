@@ -1,33 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../images/logo.jpg";
-import { useNavigate } from "react-router-dom";
-import decode from "jwt-decode";
-import { useLocation } from "react-router-dom";
-import { AuthContext } from "../../context/auth-context";
 import { IoMdExit } from "react-icons/io";
 import styles from "./navbar.module.css";
+import { useNavigate } from "react-router-dom";
+import { useAuthenticate } from "../../helpers/useAuthenticate";
 
 function Navbar() {
-  const ctx = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const logout = () => {
-    localStorage.clear();
-    ctx.setUser(null);
-    navigate("/");
-  };
-
-  useEffect(() => {
-    const token = ctx.user?.token;
-    if (token) {
-      const decodedToken = decode(token);
-      if (decodedToken.exp * 1000 < new Date().getTime()) {
-        logout();
-      }
-    }
-  }, [location, ctx]);
+  const { ctx, logout } = useAuthenticate();
 
   return (
     <div>
@@ -72,7 +53,10 @@ function Navbar() {
           <div>
             <button onClick={logout} className={styles.button_64}>
               <span className={styles.button_logout_text}>
-                <IoMdExit /> {ctx.user?.userObject?.fullname}
+                <IoMdExit />
+                {ctx.user?.userObject.fullname
+                  ? ctx.user?.userObject.fullname
+                  : ctx.user?.userObject.schoolname}
               </span>
             </button>
           </div>

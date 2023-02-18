@@ -3,6 +3,15 @@
     max-height: 40rem;
 }
 
+.car_main_text {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.car_secondary_text {
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 450px) {
     .car_img {
       max-width: 100rem;

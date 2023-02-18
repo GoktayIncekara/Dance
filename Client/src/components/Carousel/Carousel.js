@@ -14,8 +14,10 @@ function CarouselCom() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className={styles.car_main_text}>Dans Okulları</h3>
+          <p className={styles.car_secondary_text}>
+            Nerede hangi dans okulu var merak mı ediyorsunuz?
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -26,8 +28,10 @@ function CarouselCom() {
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 className={styles.car_main_text}>Dans Geceleri</h3>
+          <p className={styles.car_secondary_text}>
+            Dans gecesine gitmek istiyor fakat nerede var bilmiyor musunuz?
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -38,9 +42,9 @@ function CarouselCom() {
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          <h3 className={styles.car_main_text}>Dans Festivalleri</h3>
+          <p className={styles.car_secondary_text}>
+            Şehir şehir festival kovalamaktan yoruldunuz mu?
           </p>
         </Carousel.Caption>
       </Carousel.Item>

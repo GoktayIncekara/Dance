@@ -26,6 +26,7 @@ form {
 
 .form-heading {
   color: white;
+  text-align: center;
 }
 
 .form-button {
@@ -65,6 +66,55 @@ input:invalid[focused="true"]  ~ .error {
   font-size: 1.25rem;
   cursor: pointer;
   margin: 1rem 0;
+}
+
+.form-container-schools-add {
+  margin-top: 5rem;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+
+}
+
+.school_cards {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.6rem;
+}
+
+.school-heading {
+  font-size: 2rem;
+}
+
+.nav_link {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  transition-property: color, border-radius, background-color, font-size;
+  transition-duration: 0.4s;
+  background-color: #537FE7;
+  border-radius: 2rem;
+
+}
+
+.nav_link:hover {
+  color: white;
+  border-radius: 50px;
+  background-color: #37569e;;
+}
+
+.school-head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 450px) {
