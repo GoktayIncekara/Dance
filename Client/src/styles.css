@@ -125,6 +125,10 @@ input:invalid[focused="true"]  ~ .error {
   text-align: center;
 }
 
+.add-school-error span {
+  color: rgb(193, 58, 58);
+}
+
 .add-school-error-link {
   text-decoration: none;
   color: #E9F8F9;

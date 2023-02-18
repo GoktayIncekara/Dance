@@ -6,9 +6,10 @@ import { useAuthenticate } from "../helpers/useAuthenticate";
 import { Link } from "react-router-dom";
 
 function SchoolAdd() {
-  const { ctx } = useAuthenticate();
+  const { ctx, logout } = useAuthenticate();
   const API = axios.create({ baseURL: "http://localhost:5000" });
   const navigate = useNavigate();
+  console.log(ctx.user.role);
 
   const [values, setValues] = useState({
     schoolname: ctx.user?.userObject.schoolname,
@@ -34,7 +35,7 @@ function SchoolAdd() {
 
   return (
     <div>
-      {ctx.user ? (
+      {ctx.user?.userObject.role === 1 ? (
         <div className="form-container-schools-add">
           <form onSubmit={handleSubmit}>
             <h1 className="form-heading">Okul Ekle</h1>
@@ -100,16 +101,27 @@ function SchoolAdd() {
         </div>
       ) : (
         <div className="add-school-error">
-          <h2>
-            Okulunuzu ekleyebilmek için lütfen
-            <Link className="add-school-error-link" to="/register">
-              <h2 className="add-school-error-text"> Üye olun</h2>
-            </Link>
-            veya
-            <Link className="add-school-error-link" to="/login">
-              <h2 className="add-school-error-text"> Giriş yapın</h2>
-            </Link>
-          </h2>
+          {ctx.user?.userObject.role === 0 ? (
+            <h2>
+              Okulunuzu ekleyebilmek için lütfen
+              <span> bir okul hesabı ile</span> üye olun veya giriş yapın
+              <Link className="add-school-error-link" onClick={logout} to="/">
+                <h2 className="add-school-error-text"> Çıkış yap</h2>
+              </Link>
+            </h2>
+          ) : (
+            <h2>
+              Okulunuzu ekleyebilmek için lütfen
+              <span> bir okul hesabı ile</span>
+              <Link className="add-school-error-link" to="/register">
+                <h2 className="add-school-error-text"> Üye olun</h2>
+              </Link>
+              veya
+              <Link className="add-school-error-link" to="/login">
+                <h2 className="add-school-error-text"> Giriş yapın</h2>
+              </Link>
+            </h2>
+          )}
         </div>
       )}
     </div>
