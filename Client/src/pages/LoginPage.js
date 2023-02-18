@@ -1,30 +1,25 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput/FormInput";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useSign } from "../helpers/useSign";
 
 function LoginPage() {
-  const API = axios.create({ baseURL: "http://localhost:5000" });
-  const navigate = useNavigate();
-
+  const makePost = useSign("/user/signin", "/");
   const [values, setValues] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    makePost({ ...values });
+  };
+
   const onChange = (e) => {
     setValues((prevValues) => ({
       ...prevValues,
       [e.target.name]: e.target.value,
     }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await API.post("/user/signin", { ...values });
-    localStorage.setItem("user", JSON.stringify(response.data));
-    navigate("/");
   };
 
   return (

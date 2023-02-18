@@ -1,15 +1,12 @@
 import React, { useState, useContext } from "react";
 import FormInput from "../components/FormInput/FormInput";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useAuthenticate } from "../helpers/useAuthenticate";
 import { Link } from "react-router-dom";
+import { useSign } from "../helpers/useSign";
 
 function SchoolAdd() {
+  const makePost = useSign("/schools/add_school", "/okullar");
   const { ctx, logout } = useAuthenticate();
-  const API = axios.create({ baseURL: "http://localhost:5000" });
-  const navigate = useNavigate();
-  console.log(ctx.user.role);
 
   const [values, setValues] = useState({
     schoolname: ctx.user?.userObject.schoolname,
@@ -29,8 +26,7 @@ function SchoolAdd() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await API.post("/OKUL EKLE", { ...values });
-    navigate("/okullar");
+    makePost({ ...values });
   };
 
   return (
@@ -47,6 +43,7 @@ function SchoolAdd() {
               onChange={onChange}
               errorMessage="Lütfen bir okul adı girin."
               required
+              disabled
             />
             <FormInput
               name="year"
@@ -66,6 +63,7 @@ function SchoolAdd() {
               onChange={onChange}
               errorMessage="Lütfen geçerli bir email girin."
               required
+              disabled
             />
             <FormInput
               name="city"
@@ -75,6 +73,7 @@ function SchoolAdd() {
               onChange={onChange}
               errorMessage="Lütfen okulun bulunduğu şehri girin."
               required
+              disabled
             />
             <FormInput
               name="phone"
@@ -85,6 +84,7 @@ function SchoolAdd() {
               errorMessage="Lütfen geçerli bir telefon numarası girin."
               pattern="0[0-9]{10}"
               required
+              disabled
             />
             <FormInput
               name="instructors"

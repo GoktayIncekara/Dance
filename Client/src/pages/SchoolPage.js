@@ -26,72 +26,18 @@ function SchoolPage() {
         </Link>
       </div>
       <div className="school_cards">
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
-        <Card
-          img={schoolImg}
-          title={schools[0]?.schoolname}
-          desc={schools[0]?.email}
-          btn_text="Bize ulaşın"
-        />
+        {schools.map((school) => (
+          <Card
+            key={school._id}
+            img={schoolImg}
+            name={school.schoolname}
+            email={school.email}
+            city={school.city}
+            instructors={school.instructors}
+            phone={school.phone}
+            date={school.year}
+          />
+        ))}
       </div>
     </div>
   );

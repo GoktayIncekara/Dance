@@ -11,6 +11,7 @@ function FormInput({
   pattern,
   disabled,
   min,
+  value,
 }) {
   const [focused, setFocused] = useState(false);
   const handleFocus = (e) => {
@@ -19,17 +20,19 @@ function FormInput({
   return (
     <div className={styles.formInput}>
       <input
+        className={styles.input}
         onChange={onChange}
         type={type}
         name={name}
         placeholder={placeholder}
-        required
+        required={required}
         pattern={pattern}
         onBlur={handleFocus}
         onFocus={() => name === "confirmPassword" && setFocused(true)}
         focused={focused.toString()}
         disabled={disabled}
         min={min}
+        value={value}
       ></input>
       <span className={styles.error}>{errorMessage}</span>
     </div>

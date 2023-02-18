@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput/FormInput";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useSign } from "../helpers/useSign";
 
 function RegisterPage() {
-  const API = axios.create({ baseURL: "http://localhost:5000" });
+  const makePost = useSign("/user/signup", "/");
   const [role, setRole] = useState(null);
   const options = ["Öğrenci", "Dans okulu", "Organizator (Yakında...)"];
-  const navigate = useNavigate();
 
   const onRoleChangeHandler = (e) => {
     setRole(+e.target.value);
@@ -34,9 +32,7 @@ function RegisterPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await API.post("/user/signup", { ...values, role });
-    localStorage.setItem("user", JSON.stringify(response.data));
-    navigate("/");
+    makePost({ ...values, role });
   };
 
   return (
@@ -117,7 +113,7 @@ function RegisterPage() {
             name="city"
             type="text"
             placeholder="Şehir"
-            value={values["phone"]}
+            value={values["city"]}
             onChange={onChange}
             errorMessage="Lütfen şehri girin."
             pattern="^[A-Za-z-İ]{2,20}$"
@@ -128,7 +124,7 @@ function RegisterPage() {
             name="phone"
             type="tel"
             placeholder="Telefon numarası"
-            value={values["city"]}
+            value={values["phone"]}
             onChange={onChange}
             errorMessage="Lütfen geçerli bir telefon numarası girin."
             pattern="0[0-9]{10}"
