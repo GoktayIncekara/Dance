@@ -117,6 +117,28 @@ input:invalid[focused="true"]  ~ .error {
   margin-bottom: 3rem;
 }
 
+.add-school-error {
+  background-color: #181823;
+  color: white;
+  margin: 5rem 25rem 5rem 25rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.add-school-error-link {
+  text-decoration: none;
+  color: #E9F8F9;
+}
+
+.add-school-error-link:hover {
+  color: #537FE7 ;
+}
+
+.add-school-error-text {
+  font-size: 3rem;
+  margin: 2rem;
+}
+
 @media screen and (max-width: 450px) {
   .body-container {
     margin: 1rem 1rem;
