@@ -1,9 +1,40 @@
 .card {
     width: 34rem;
+    color: white;
+    background-color: #181823;
+    border: 0.2rem solid #181823;
 }
-  
+
 .card_img_top {
     width: 100%;
-    height: 15vw;
+    height: 20vh;
     object-fit: cover;
+}
+
+.overlay {
+    height: 21vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.name {
+    font-size: 2.5rem;
+}
+
+.card_button {
+    margin-top: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.mail {
+    text-decoration: none;
+    color: black;
+}
+
+.mail:hover {
+    color: #537FE7;
 }

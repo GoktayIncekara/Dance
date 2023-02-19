@@ -8,26 +8,22 @@ function CustomCard({ img, name, email, city, instructors, phone, date }) {
   return (
     <Card className={`${styles.card} text-center`}>
       <Card.Img className={styles.card_img_top} variant="top" src={img} />
-      <Card.ImgOverlay>
-        <Card.Title>Card title</Card.Title>
-        <Card.Text>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </Card.Text>
-        <Card.Text>Last updated 3 mins ago</Card.Text>
+      <Card.ImgOverlay className={styles.overlay}>
+        <Card.Title className={styles.name}>{name}</Card.Title>
       </Card.ImgOverlay>
 
-      <Card.Header as="h1">{name}</Card.Header>
+      <Card.Header as="h3">{email}</Card.Header>
       <Card.Body>
-        <Card.Title>{email}</Card.Title>
-        <Card.Subtitle>{city}</Card.Subtitle>
-        <Card.Text>{phone}</Card.Text>
+        <Card.Title>{city}</Card.Title>
+        <Card.Text>Telefon numarası: {phone}</Card.Text>
+        <Card.Text>Eğitmen sayısı: {instructors}</Card.Text>
       </Card.Body>
-      <ListGroup variant="flush">
-        <ListGroup.Item>{instructors}</ListGroup.Item>
-      </ListGroup>
       <Card.Footer className="text-muted">{date}</Card.Footer>
-      <Button variant="primary">Bize ulaşın!</Button>
+      <button className={styles.card_button}>
+        <a href={`mailto:${email}`} className={styles.mail}>
+          Bize ulaşın!
+        </a>
+      </button>
     </Card>
   );
 }
