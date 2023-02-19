@@ -50,7 +50,7 @@ function Navbar() {
             </button>
           </div>
         ) : (
-          <div>
+          <div className={styles.nav_buttons}>
             <button onClick={logout} className={styles.button_64}>
               <span className={styles.button_logout_text}>
                 <IoMdExit />

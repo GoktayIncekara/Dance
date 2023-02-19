@@ -40,7 +40,7 @@
     padding-top: 3px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 900px) {
     .contact_section {
       height: 20vh;
     }
@@ -60,4 +60,3 @@
       font-size: 10px;
     }
 }
-  

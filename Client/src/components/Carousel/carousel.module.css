@@ -1,5 +1,5 @@
 .car_img {
-    max-width: 150rem;
+    max-width: 250rem;
     max-height: 40rem;
 }
 
@@ -12,9 +12,35 @@
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 450px) {
-    .car_img {
-      max-width: 100rem;
-      max-height: 15rem;
+@media screen and (max-width: 1150px) {
+    .car_main_text {
+      font-size: 3rem;
     }
+    .car_secondary_text {
+      font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+  .car_main_text {
+    font-size: 2rem;
   }
+  .car_secondary_text {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .car_main_text {
+    font-size: 1.4rem;
+  }
+  .car_secondary_text {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .car_main_text {
+    font-size: 1rem;
+  }
+}
