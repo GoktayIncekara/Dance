@@ -2,52 +2,10 @@
   margin: 1rem 2rem 0 2rem;
 }
 
-.form-container {
-  margin-top: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-}
-
 input {
   padding: 15px;
   margin: 10px 0;
   border-radius: 10px;
-}
-
-form {
-  background-color: #181823;
-  padding: 60px;
-  border-radius: 10px;
-  min-width: 40vw;
-  min-height: 30vh;
-}
-
-.form-heading {
-  color: white;
-  text-align: center;
-}
-
-.form-button {
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  border: none;
-  background-color:#537FE7;
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  transition: 0.3s linear all;
-}
-
-.register-button-disabled {
-  background-color: black;
-  border: 1px solid white;
-  opacity: 0.3;
 }
 
 input:invalid[focused="true"] {
@@ -56,24 +14,6 @@ input:invalid[focused="true"] {
 
 input:invalid[focused="true"]  ~ .error {
   display: block;
-}
-
-.register-select {
-  width: 100%;
-  min-width: 15ch;
-  border-radius: 0.75rem;
-  padding: 0.5rem;
-  font-size: 1.25rem;
-  cursor: pointer;
-  margin: 1rem 0;
-}
-
-.form-container-schools-add {
-  margin-top: 5rem;
-  min-height: 40vh;
-  display: flex;
-  justify-content: center;
-
 }
 
 .school_cards {
@@ -87,27 +27,6 @@ input:invalid[focused="true"]  ~ .error {
 
 .school-heading {
   font-size: 2rem;
-}
-
-.nav_link {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-family: 'Roboto', sans-serif;
-  transition-property: color, border-radius, background-color, font-size;
-  transition-duration: 0.4s;
-  background-color: #537FE7;
-  border-radius: 2rem;
-
-}
-
-.nav_link:hover {
-  color: white;
-  border-radius: 50px;
-  background-color: #37569e;;
 }
 
 .school-head {
@@ -145,6 +64,6 @@ input:invalid[focused="true"]  ~ .error {
 
 @media screen and (max-width: 450px) {
   .body-container {
-    margin: 1rem 1rem;
+    margin: 0.3rem;
   }
 }

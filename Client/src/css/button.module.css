@@ -1,0 +1,20 @@
+.regular {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    transition-property: color, border-radius, background-color, font-size;
+    transition-duration: 0.4s;
+    background-color: #537FE7;
+    border-radius: 2rem;
+  
+  }
+  
+.regular:hover {
+    color: white;
+    border-radius: 50px;
+    background-color: #37569e;;
+}

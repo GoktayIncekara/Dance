@@ -3,6 +3,7 @@ import FormInput from "../components/FormInput/FormInput";
 import { useAuthenticate } from "../helpers/useAuthenticate";
 import { Link } from "react-router-dom";
 import { useSign } from "../helpers/useSign";
+import styles from "../css/form.module.css";
 
 function SchoolAdd() {
   const makePost = useSign("/schools/add_school", "/okullar");
@@ -32,9 +33,9 @@ function SchoolAdd() {
   return (
     <div>
       {ctx.user?.userObject.role === 1 ? (
-        <div className="form-container-schools-add">
-          <form onSubmit={handleSubmit}>
-            <h1 className="form-heading">Okul Ekle</h1>
+        <div className={styles.container}>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <h1 className={styles.heading}>Okul Ekle</h1>
             <FormInput
               name="schoolname"
               type="text"
@@ -96,7 +97,7 @@ function SchoolAdd() {
               min="0"
               required
             />
-            <button className="form-button">Okul kaydet!</button>
+            <button className={styles.button}>Okul kaydet!</button>
           </form>
         </div>
       ) : (

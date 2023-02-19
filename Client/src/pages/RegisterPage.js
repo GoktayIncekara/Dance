@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput/FormInput";
 import { useSign } from "../helpers/useSign";
+import styles from "../css/form.module.css";
 
 function RegisterPage() {
   const makePost = useSign("/user/signup", "/");
@@ -37,10 +38,10 @@ function RegisterPage() {
 
   return (
     <div className="body-container">
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <h1 className="form-heading">Kayıt Ol</h1>
-          <select className="register-select" onChange={onRoleChangeHandler}>
+      <div className={styles.container}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <h1 className={styles.heading}>Kayıt Ol</h1>
+          <select className={styles.select} onChange={onRoleChangeHandler}>
             <option disabled={role !== null}>Seçiniz</option>
             {options.map((option, index) => {
               return (
@@ -155,8 +156,8 @@ function RegisterPage() {
           />
           <button
             disabled={role === null ? true : false}
-            className={`form-button ${
-              role === null ? "register-button-disabled" : ""
+            className={`${styles.button} ${
+              role === null ? styles.button_disabled : ""
             }`}
           >
             {role !== null ? `${options[role]} olarak kayıt ol` : "Kayıt ol"}

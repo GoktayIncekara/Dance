@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput/FormInput";
 import { useSign } from "../helpers/useSign";
+import styles from "../css/form.module.css";
 
 function LoginPage() {
   const makePost = useSign("/user/signin", "/");
@@ -24,9 +25,9 @@ function LoginPage() {
 
   return (
     <div className="body-container">
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <h1 className="form-heading">Giriş Yap</h1>
+      <div className={styles.container}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <h1 className={styles.heading}>Giriş Yap</h1>
           <FormInput
             name="email"
             type="email"
@@ -56,7 +57,7 @@ function LoginPage() {
             pattern={values.password}
             required
           />
-          <button className="form-button">Giriş Yap</button>
+          <button className={styles.button}>Giriş Yap</button>
         </form>
       </div>
     </div>

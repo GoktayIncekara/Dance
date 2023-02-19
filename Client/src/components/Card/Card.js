@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./customCard.module.css";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 
 function CustomCard({ img, name, email, city, instructors, phone, date }) {
   return (
