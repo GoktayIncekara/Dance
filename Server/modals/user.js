@@ -5,6 +5,8 @@ const userSchema = mongoose.Schema({
   birthday: Date,
   schoolname: String,
   year: String,
+  instructors: Number,
+  active: Boolean,
   email: { type: String, required: true },
   city: { type: String, required: true },
   phone: { type: Number, required: true },
