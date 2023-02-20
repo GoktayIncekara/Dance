@@ -50,7 +50,7 @@ function LoginPage() {
           <FormInput
             name="confirmPassword"
             type="password"
-            placeholder="Lütfen şifrenizi doğrulayın."
+            placeholder="Şifrenizi doğrulayın."
             value={values["confirmPassword"]}
             onChange={onChange}
             errorMessage="Şifreler eşleşmiyor."

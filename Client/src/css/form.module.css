@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 70vh;
+    min-height: 50vh;
 }
 
 .form {
@@ -48,4 +48,19 @@
     font-size: 1.25rem;
     cursor: pointer;
     margin: 1rem 0;
-  }
+}
+
+@media screen and (max-width: 2000px) {
+    .form {
+        min-width: 50rem;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+
+    .form {
+        padding: 20px;
+        min-width: 90vw;
+    }
+}

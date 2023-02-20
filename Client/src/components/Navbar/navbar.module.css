@@ -155,7 +155,7 @@
     }
 
     .nav_link {
-      font-size: 0.7rem;
+      font-size: 1.1rem;
     }
 
     .button_64 {
@@ -174,10 +174,14 @@
     }
 }
 
-@media screen and (max-width: 455px) {
+@media screen and (max-width: 590px) {
     .nav_links {
         flex-direction: column;
         gap: 0;
+    }
+
+    .nav_link {
+        
     }
 
     .nav_seperator {

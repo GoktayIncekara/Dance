@@ -39,8 +39,8 @@
   }
 }
 
-@media screen and (max-width: 300px) {
-  .car_main_text {
-    font-size: 1rem;
+@media screen and (max-width: 305px) {
+  .car_secondary_text {
+    display: none;
   }
 }
