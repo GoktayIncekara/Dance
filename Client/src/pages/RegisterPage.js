@@ -139,7 +139,7 @@ function RegisterPage() {
             placeholder="Şifre"
             value={values["password"]}
             onChange={onChange}
-            errorMessage="Lütfen şifrenizi girin."
+            errorMessage="Şireniz minimum 8 karakter olmalı, en az bir büyük harf bir rakam ve bir özel karakter içermelidir."
             pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
             required
             disabled={role === null ? true : false}

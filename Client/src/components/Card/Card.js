@@ -1,10 +1,17 @@
 import React from "react";
 import styles from "./customCard.module.css";
 import Card from "react-bootstrap/Card";
+import { useNavigate } from "react-router-dom";
 
 function CustomCard({ img, name, email, city, instructors, phone, date }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`./${name.replaceAll(" ", "")}`);
+  };
+
   return (
-    <Card className={`${styles.card} text-center`}>
+    <Card onClick={handleClick} className={`${styles.card} text-center`}>
       <Card.Img className={styles.card_img_top} variant="top" src={img} />
       <Card.ImgOverlay className={styles.overlay}>
         <Card.Title className={styles.name}>{name}</Card.Title>
@@ -17,11 +24,6 @@ function CustomCard({ img, name, email, city, instructors, phone, date }) {
         <Card.Text>Eğitmen sayısı: {instructors}</Card.Text>
       </Card.Body>
       <Card.Footer className="text-muted">{date}</Card.Footer>
-      <button className={styles.card_button}>
-        <a href={`mailto:${email}`} className={styles.mail}>
-          Bize ulaşın!
-        </a>
-      </button>
     </Card>
   );
 }

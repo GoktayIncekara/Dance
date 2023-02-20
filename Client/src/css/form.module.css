@@ -19,6 +19,36 @@
     text-align: center;
 }
 
+input {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+  
+input ~ span {
+    display: none;
+    max-width: 70vw;
+}
+  
+input:invalid[focused="true"] {
+    border: 2px solid red;
+}
+  
+input:invalid[focused="true"]  ~ span {
+    display: block;
+    font-size: 20px;
+    padding: 3px;
+    color: red;
+}
+  
+.input:disabled {
+    border: 3px solid #fafafa;
+    background-color: #878787;
+    color: white;
+    font-weight: bold;
+    opacity: 0.6;
+}  
+
 .button {
     width: 100%;
     height: 50px;
@@ -38,7 +68,7 @@
     background-color: black;
     border: 1px solid white;
     opacity: 0.3;
-  }
+}
 
 .select {
     width: 100%;

@@ -3,6 +3,7 @@
     color: white;
     background-color: #181823;
     border: 0.2rem solid #181823;
+    cursor: pointer;
 }
 
 .card_img_top {
@@ -20,21 +21,4 @@
 
 .name {
     font-size: 2.5rem;
-}
-
-.card_button {
-    margin-top: 1rem;
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.mail {
-    text-decoration: none;
-    color: black;
-}
-
-.mail:hover {
-    color: #537FE7;
 }

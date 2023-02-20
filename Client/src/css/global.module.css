@@ -28,20 +28,6 @@
   color: rgb(193, 58, 58);
 }
 
-input {
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 10px;
-}
-
-input:invalid[focused="true"] {
-  border: 2px solid red;
-}
-
-input:invalid[focused="true"]  ~ .error {
-  display: block;
-}
-
 .card_container {
   margin-top: 2rem;
   display: flex;

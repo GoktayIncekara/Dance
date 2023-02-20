@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 
 export const useAuthenticate = () => {
+  console.log("hook rendered");
   const ctx = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,6 +17,7 @@ export const useAuthenticate = () => {
   };
 
   useEffect(() => {
+    console.log("hook useEffect rendered");
     const token = ctx.user?.token;
     if (token) {
       const decodedToken = decode(token);

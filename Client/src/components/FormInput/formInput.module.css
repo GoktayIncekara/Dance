@@ -1,19 +1,4 @@
-.formInput {
+.container {
     display: flex;
     flex-direction: column;
-}
-
-.input:disabled {
-  border: 3px solid #fafafa;
-  background-color: #878787;
-  color: white;
-  font-weight: bold;
-  opacity: 0.6;
-}
-
-.error {
-    font-size: 20px;
-    padding: 3px;
-    color: red;
-    display: none;
 }
