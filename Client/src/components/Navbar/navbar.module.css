@@ -90,6 +90,7 @@
     touch-action: manipulation;
     white-space: nowrap;
     cursor: pointer;
+    transition: opacity 1s;
 }
   
 .button_64:active,
@@ -110,7 +111,7 @@
     background: none;
 }
 
-.button_logout_text {
+.button_text {
     display: flex;
     gap: 0.8rem;
 }

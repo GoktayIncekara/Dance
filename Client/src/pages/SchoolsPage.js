@@ -28,18 +28,22 @@ function SchoolsPage() {
         </Link>
       </div>
       <div className={global.card_container}>
-        {schools.map((school) => (
-          <Card
-            key={school._id}
-            img={schoolImg}
-            name={school.schoolname}
-            email={school.email}
-            city={school.city}
-            instructors={school.instructors}
-            phone={school.phone}
-            date={school.year}
-          />
-        ))}
+        {schools.map((school) => {
+          if (school.active) {
+            return (
+              <Card
+                key={school._id}
+                img={schoolImg}
+                name={school.schoolname}
+                email={school.email}
+                city={school.city}
+                instructors={school.instructors}
+                phone={school.phone}
+                date={school.year}
+              />
+            );
+          }
+        })}
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import SchoolAddPage from "./pages/SchoolAddPage";
 import Footer from "./components/Footer/Footer";
 import { AuthProvider } from "./context/auth-context";
 import SchoolPage from "./pages/SchoolPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/okullar" element={<SchoolsPage />} />
         <Route path="/okullar/:name" element={<SchoolPage />} />
         <Route path="/okul_ekle" element={<SchoolAddPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
       <Footer />
     </AuthProvider>

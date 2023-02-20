@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../images/logo.jpg";
-import { IoMdExit } from "react-icons/io";
+import { IoMdExit, IoIosContact } from "react-icons/io";
 import styles from "./navbar.module.css";
 import { useNavigate } from "react-router-dom";
 import { useAuthenticate } from "../../helpers/useAuthenticate";
@@ -51,12 +51,21 @@ function Navbar() {
           </div>
         ) : (
           <div className={styles.nav_buttons}>
-            <button onClick={logout} className={styles.button_64}>
-              <span className={styles.button_logout_text}>
-                <IoMdExit />
+            <button
+              onClick={() => navigate("./profile")}
+              className={styles.button_64}
+            >
+              <span className={styles.button_text}>
+                <IoIosContact />
                 {ctx.user?.userObject.fullname
                   ? ctx.user?.userObject.fullname
                   : ctx.user?.userObject.schoolname}
+              </span>
+            </button>
+            <button onClick={logout} className={styles.button_64}>
+              <span className={styles.button_text}>
+                <IoMdExit />
+                Çıkış Yap
               </span>
             </button>
           </div>

@@ -41,7 +41,7 @@ input:invalid[focused="true"]  ~ span {
     color: red;
 }
   
-.input:disabled {
+input:disabled {
     border: 3px solid #fafafa;
     background-color: #878787;
     color: white;
