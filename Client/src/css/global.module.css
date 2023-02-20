@@ -1,0 +1,76 @@
+.body_container {
+    margin: 1rem 2rem 0 2rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #E9F8F9;
+}
+
+.link:hover {
+  color: #537FE7 ;
+}
+
+.link h2 {
+  font-size: 3rem;
+  margin: 2rem;
+}
+
+.div {
+  background-color: #181823;
+  color: white;
+  margin: 5rem 25rem 5rem 25rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.div span {
+  color: rgb(193, 58, 58);
+}
+
+input {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+input:invalid[focused="true"] {
+  border: 2px solid red;
+}
+
+input:invalid[focused="true"]  ~ .error {
+  display: block;
+}
+
+.card_container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.6rem;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.heading h1 {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .card_container {
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .body-container {
+    margin: 0.3rem;
+  }
+}

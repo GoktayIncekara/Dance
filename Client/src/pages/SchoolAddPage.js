@@ -3,7 +3,8 @@ import FormInput from "../components/FormInput/FormInput";
 import { useAuthenticate } from "../helpers/useAuthenticate";
 import { Link } from "react-router-dom";
 import { useSign } from "../helpers/useSign";
-import styles from "../css/form.module.css";
+import form from "../css/form.module.css";
+import global from "../css/global.module.css";
 
 function SchoolAdd() {
   const makePost = useSign("/schools/add_school", "/okullar");
@@ -31,11 +32,11 @@ function SchoolAdd() {
   };
 
   return (
-    <div>
+    <div className={global.body_container}>
       {ctx.user?.userObject.role === 1 ? (
-        <div className={styles.container}>
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <h1 className={styles.heading}>Okul Ekle</h1>
+        <div className={form.container}>
+          <form className={form.form} onSubmit={handleSubmit}>
+            <h1 className={form.heading}>Okul Ekle</h1>
             <FormInput
               name="schoolname"
               type="text"
@@ -97,29 +98,29 @@ function SchoolAdd() {
               min="0"
               required
             />
-            <button className={styles.button}>Okul kaydet!</button>
+            <button className={form.button}>Okul kaydet!</button>
           </form>
         </div>
       ) : (
-        <div className="add-school-error">
+        <div className={global.div}>
           {ctx.user?.userObject.role === 0 ? (
             <h2>
               Okulunuzu ekleyebilmek için lütfen
               <span> bir okul hesabı ile</span> üye olun veya giriş yapın
-              <Link className="add-school-error-link" onClick={logout} to="/">
-                <h2 className="add-school-error-text"> Çıkış yap</h2>
+              <Link className={global.link} onClick={logout} to="/">
+                <h2> Çıkış yap</h2>
               </Link>
             </h2>
           ) : (
             <h2>
               Okulunuzu ekleyebilmek için lütfen
               <span> bir okul hesabı ile</span>
-              <Link className="add-school-error-link" to="/register">
-                <h2 className="add-school-error-text"> Üye olun</h2>
+              <Link className={global.link} to="/register">
+                <h2> Üye olun</h2>
               </Link>
               veya
-              <Link className="add-school-error-link" to="/login">
-                <h2 className="add-school-error-text"> Giriş yapın</h2>
+              <Link className={global.link} to="/login">
+                <h2> Giriş yapın</h2>
               </Link>
             </h2>
           )}

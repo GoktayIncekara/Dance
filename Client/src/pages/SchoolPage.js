@@ -4,6 +4,7 @@ import schoolImg from "../images/banner-latin-2.jpg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import button from "../css/button.module.css";
+import global from "../css/global.module.css";
 
 function SchoolPage() {
   const API = axios.create({ baseURL: "http://localhost:5000" });
@@ -19,14 +20,14 @@ function SchoolPage() {
   }, []);
 
   return (
-    <div className="body-container">
-      <div className="school-head">
-        <h1 className="school-heading">Dans Okulları</h1>
+    <div className={global.body_container}>
+      <div className={global.heading}>
+        <h1>Dans Okulları</h1>
         <Link className={button.regular} to="/okul_ekle">
           Kendi dans okulunu ekle
         </Link>
       </div>
-      <div className="school_cards">
+      <div className={global.card_container}>
         {schools.map((school) => (
           <Card
             key={school._id}
