@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./context/auth-context";
 import Navbar from "./components/Navbar/Navbar";
 import MainPage from "./pages/MainPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -7,7 +8,6 @@ import LoginPage from "./pages/LoginPage";
 import SchoolsPage from "./pages/SchoolsPage";
 import SchoolAddPage from "./pages/SchoolAddPage";
 import Footer from "./components/Footer/Footer";
-import { AuthProvider } from "./context/auth-context";
 import SchoolPage from "./pages/SchoolPage";
 import ProfilePage from "./pages/ProfilePage";
 

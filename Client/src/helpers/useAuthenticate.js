@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import decode from "jwt-decode";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 
 export const useAuthenticate = () => {

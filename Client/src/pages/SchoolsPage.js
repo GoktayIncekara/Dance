@@ -1,25 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Card from "../components/Card/Card";
 import schoolImg from "../images/banner-latin-2.jpg";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import button from "../css/button.module.css";
 import global from "../css/global.module.css";
 import { useAuthenticate } from "../helpers/useAuthenticate";
+import { useGetSchools } from "../helpers/useGetSchools";
 
 function SchoolsPage() {
   const { ctx, logout } = useAuthenticate();
-  const API = axios.create({ baseURL: "http://localhost:5000" });
-  const [schools, setSchools] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await API.get("/schools");
-      setSchools(response.data);
-    };
-
-    fetchData();
-  }, []);
+  const { schools, setSchools } = useGetSchools("");
 
   return (
     <div className={global.body_container}>

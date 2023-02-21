@@ -7,7 +7,7 @@ import form from "../css/form.module.css";
 import global from "../css/global.module.css";
 
 function SchoolAdd() {
-  const makePost = useSign("/schools/add_school", "/okullar");
+  const makePost = useSign("/schools/addSchool", "/okullar");
   const { ctx, logout } = useAuthenticate();
 
   const [values, setValues] = useState({

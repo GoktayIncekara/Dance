@@ -1,5 +1,4 @@
 import Latin from "../../images/banner-latin.jpg";
-import Latin2 from "../../images/banner-latin-2.jpg";
 import Carousel from "react-bootstrap/Carousel";
 import React from "react";
 import styles from "./carousel.module.css";
