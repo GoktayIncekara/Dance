@@ -30,7 +30,7 @@ function SchoolsPage() {
           if (school.active) {
             return (
               <Card
-                id={school._id}
+                path={`/okullar/${school._id}`}
                 key={school._id}
                 img={schoolImg}
                 name={school.schoolname}

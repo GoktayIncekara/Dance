@@ -7,22 +7,25 @@ import { useGetSchools } from "../helpers/useGetSchools";
 
 function SchoolPage() {
   const { id } = useParams();
-  const { schools, setSchools } = useGetSchools(`/${id}`);
+  const { schools: school, setSchools: setSchool } = useGetSchools(`/${id}`);
 
   return (
     <div className={global.body_container}>
-      <div className={global.card_container}>
-        <Card
-          id={schools._id}
-          key={schools._id}
-          img={schoolImg}
-          name={schools.schoolname}
-          email={schools.email}
-          city={schools.city}
-          instructors={schools.instructors}
-          phone={schools.phone}
-          date={schools.year}
-        />
+      <div className="school_container">
+        <div className="school_infos">
+          <Card
+            big
+            key={school._id}
+            img={schoolImg}
+            name={school.schoolname}
+            email={school.email}
+            city={school.city}
+            instructors={school.instructors}
+            phone={school.phone}
+            date={school.year}
+          />
+        </div>
+        <div className="school_schedule"></div>
       </div>
     </div>
   );

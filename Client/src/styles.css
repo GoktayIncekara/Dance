@@ -1,0 +1,13 @@
+.school_container {
+    display: flex;
+    margin-top: 5rem;
+}
+
+.school_infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.school_schedule {
+    
+}

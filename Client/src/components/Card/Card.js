@@ -3,15 +3,28 @@ import styles from "./customCard.module.css";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 
-function CustomCard({ img, name, email, city, instructors, phone, date, id }) {
+function CustomCard({
+  img,
+  name,
+  email,
+  city,
+  instructors,
+  phone,
+  date,
+  path,
+  big,
+}) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/okullar/${id}`);
+    if (path) navigate(path);
   };
 
   return (
-    <Card onClick={handleClick} className={`${styles.card} text-center`}>
+    <Card
+      onClick={handleClick}
+      className={`${styles.card} text-center ${path ? styles.clickable : ""}`}
+    >
       <Card.Img className={styles.card_img_top} variant="top" src={img} />
       <Card.ImgOverlay className={styles.overlay}>
         <Card.Title className={styles.name}>{name}</Card.Title>
