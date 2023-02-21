@@ -3,11 +3,11 @@ import styles from "./customCard.module.css";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 
-function CustomCard({ img, name, email, city, instructors, phone, date }) {
+function CustomCard({ img, name, email, city, instructors, phone, date, id }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`./${name.replaceAll(" ", "")}`);
+    navigate(`/okullar/${id}`);
   };
 
   return (

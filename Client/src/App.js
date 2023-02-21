@@ -20,7 +20,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/okullar" element={<SchoolsPage />} />
-        <Route path="/okullar/:name" element={<SchoolPage />} />
+        <Route path="/okullar/:id" element={<SchoolPage />} />
         <Route path="/okul_ekle" element={<SchoolAddPage />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
