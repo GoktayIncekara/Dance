@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./formInput.module.css";
-import form from "../../css/form.module.css";
 
 function FormInput({ name, errorMessage, ...rest }) {
   const [focused, setFocused] = useState(false);

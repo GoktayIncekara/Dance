@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import FormInput from "../components/FormInput/FormInput";
-import { useSign } from "../helpers/useSign";
+import { useSign } from "../common/helpers/useSign";
 import form from "../css/form.module.css";
 import global from "../css/global.module.css";
 import { useNavigate } from "react-router-dom";
-import { useAuthenticate } from "../helpers/useAuthenticate";
+import { useAuthenticate } from "../common/helpers/useAuthenticate";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -14,7 +14,6 @@ function LoginPage() {
   const [values, setValues] = useState({
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   useEffect(() => {
@@ -55,16 +54,6 @@ function LoginPage() {
             onChange={onChange}
             errorMessage="Lütfen şifrenizi girin"
             pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-            required
-          />
-          <FormInput
-            name="confirmPassword"
-            type="password"
-            placeholder="Şifrenizi doğrulayın"
-            value={values["confirmPassword"]}
-            onChange={onChange}
-            errorMessage="Şifreler eşleşmiyor."
-            pattern={values.password}
             required
           />
           <button className={form.button}>Giriş Yap</button>

@@ -4,7 +4,7 @@ import Logo from "../../images/logo.jpg";
 import { IoMdExit, IoIosContact } from "react-icons/io";
 import styles from "./navbar.module.css";
 import { useNavigate } from "react-router-dom";
-import { useAuthenticate } from "../../helpers/useAuthenticate";
+import { useAuthenticate } from "../../common/helpers/useAuthenticate";
 
 function Navbar() {
   const navigate = useNavigate();

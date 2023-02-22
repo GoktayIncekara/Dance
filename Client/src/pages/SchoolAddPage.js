@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import FormInput from "../components/FormInput/FormInput";
-import { useAuthenticate } from "../helpers/useAuthenticate";
+import { useAuthenticate } from "../common/helpers/useAuthenticate";
 import { Link } from "react-router-dom";
-import { useSign } from "../helpers/useSign";
+import { useSign } from "../common/helpers/useSign";
 import form from "../css/form.module.css";
 import global from "../css/global.module.css";
 

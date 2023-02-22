@@ -4,8 +4,8 @@ import schoolImg from "../images/banner-latin-2.jpg";
 import { Link } from "react-router-dom";
 import button from "../css/button.module.css";
 import global from "../css/global.module.css";
-import { useAuthenticate } from "../helpers/useAuthenticate";
-import { useGetSchools } from "../helpers/useGetSchools";
+import { useAuthenticate } from "../common/helpers/useAuthenticate";
+import { useGetSchools } from "../common/helpers/useGetSchools";
 
 function SchoolsPage() {
   const { ctx, logout } = useAuthenticate();

@@ -3,7 +3,7 @@ import global from "../css/global.module.css";
 import { useParams } from "react-router-dom";
 import schoolImg from "../images/banner-latin-2.jpg";
 import Card from "../components/Card/Card";
-import { useGetSchools } from "../helpers/useGetSchools";
+import { useGetSchools } from "../common/helpers/useGetSchools";
 
 function SchoolPage() {
   const { id } = useParams();

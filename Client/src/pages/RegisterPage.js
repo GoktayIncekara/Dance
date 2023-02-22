@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput/FormInput";
-import { useSign } from "../helpers/useSign";
+import { useSign } from "../common/helpers/useSign";
 import form from "../css/form.module.css";
 import global from "../css/global.module.css";
 
