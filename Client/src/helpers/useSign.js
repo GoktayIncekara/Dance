@@ -6,9 +6,14 @@ export const useSign = (path, nav) => {
   const navigate = useNavigate();
 
   const makePost = async (data) => {
-    const response = await API.post(path, data);
-    localStorage.setItem("user", JSON.stringify(response.data));
-    navigate(nav);
+    const response = API.post(path, data)
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(response.data));
+        navigate(nav);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return makePost;

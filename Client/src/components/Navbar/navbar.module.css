@@ -139,8 +139,6 @@
 
 }
 
-
-
 @media screen and (max-width: 640px) {
     .logo {
         height: 4rem;
@@ -152,7 +150,12 @@
     }
 
     .nav_links {
-        margin-bottom: 0;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav_seperator {
+        display: none;
     }
 
     .nav_link {
@@ -172,21 +175,6 @@
 
     .nav_hr {
       margin-top: 0.5rem;
-    }
-}
-
-@media screen and (max-width: 590px) {
-    .nav_links {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .nav_link {
-        
-    }
-
-    .nav_seperator {
-        display: none;
     }
 }
 
