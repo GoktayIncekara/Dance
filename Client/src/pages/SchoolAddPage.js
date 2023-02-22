@@ -3,8 +3,8 @@ import FormInput from "../components/FormInput/FormInput";
 import { useAuthenticate } from "../common/helpers/useAuthenticate";
 import { Link } from "react-router-dom";
 import { useSign } from "../common/helpers/useSign";
-import form from "../css/form.module.css";
-import global from "../css/global.module.css";
+import form from "../common/css/form.module.css";
+import global from "../common/css/global.module.css";
 
 function SchoolAdd() {
   const makePost = useSign("/schools/addSchool", "/okullar");

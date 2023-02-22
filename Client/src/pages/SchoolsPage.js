@@ -2,8 +2,8 @@ import React from "react";
 import Card from "../components/Card/Card";
 import schoolImg from "../images/banner-latin-2.jpg";
 import { Link } from "react-router-dom";
-import button from "../css/button.module.css";
-import global from "../css/global.module.css";
+import button from "../common/css/button.module.css";
+import global from "../common/css/global.module.css";
 import { useAuthenticate } from "../common/helpers/useAuthenticate";
 import { useGetSchools } from "../common/helpers/useGetSchools";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import global from "../css/global.module.css";
+import global from "../common/css/global.module.css";
 import { useParams } from "react-router-dom";
 import schoolImg from "../images/banner-latin-2.jpg";
 import Card from "../components/Card/Card";

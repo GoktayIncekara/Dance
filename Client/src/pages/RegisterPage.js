@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput/FormInput";
 import { useSign } from "../common/helpers/useSign";
-import form from "../css/form.module.css";
-import global from "../css/global.module.css";
+import form from "../common/css/form.module.css";
+import global from "../common/css/global.module.css";
 
 function RegisterPage() {
   const makePost = useSign("/user/signup", "/");

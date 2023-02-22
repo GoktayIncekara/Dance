@@ -1,5 +1,5 @@
 import React from "react";
-import global from "../css/global.module.css";
+import global from "../common/css/global.module.css";
 
 function ProfilePage() {
   return <div className={global.body_container}>Profile</div>;
